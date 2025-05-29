@@ -1,13 +1,14 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 app.get('/api/user/:username',(req,res)=>{
     res.status(200).send({message:"Hello "+req.params.username});
 });
 
 app.get('/api/user_detail',(req,res)=>{
-    res.status(200).send({user: {name:'azhar',age:32,contact:'9504632280'}});
+    res.status(200).send({user: {name:'azhar',age:32,contact:'9504632280'},env:{port:process.env.PORT,name:process.env.NAME}});
 });
 
 app.get('/api/about_us',(req,res)=>{
