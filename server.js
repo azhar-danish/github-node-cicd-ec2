@@ -10,6 +10,10 @@ app.get('/api/user_detail',(req,res)=>{
     res.status(200).send({user: {name:'azhar',age:32,contact:'9504632280'}});
 });
 
+app.get('/api/about_us',(req,res)=>{
+    res.status(200).send({content: "<h2>About Us</h2>"});
+});
+
 
 app.use('/api',(req,res)=>{
     res.status(200).send({message:"welcome to my app"});
